@@ -25,5 +25,4 @@ export function trackJSException() {
       timestamp: getTimeStamp(),
     })
   })
-
 }
