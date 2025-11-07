@@ -1,5 +1,4 @@
 // SDK 入口文件
-// index.ts
 import { trackPV } from "./core/behavior";
 import { trackJSException } from "./core/error"
 

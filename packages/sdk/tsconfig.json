@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",         // 输出的 JS 版本（兼容度）
+    "module": "ESNext",         // 使用 ESModule（SDK 通常输出 ESM）
+    "moduleResolution": "Node", // 模块查找方式（现代规范）
+    "outDir": "./dist",         // 编译后的文件放在 dist 目录
+    "strict": true,             // 启动严格模式（更安全）
+    "sourceMap": true,          // 生成 .map 方便调试
+    "allowJs": false,           // 不允许 .js 文件参与编译
+    "declaration": true,        // 生成 .d.ts 类型文件（给使用者）
+    "declarationDir": "./dist/types", // 类型文件放哪
+    "esModuleInterop": true,    // 兼容 CommonJS
+    "skipLibCheck": true,       // 跳过库的类型检查（提升速度）
+    "forceConsistentCasingInFileNames": true, // 文件大小写一致性
+    "baseUrl": "./",            // 路径根目录
+    "paths": {
+      "@/*": ["./src/*"]        // 设置路径别名
+    }
+  },
+  "include": ["src"],           // 编译哪些文件
+  "exclude": ["node_modules", "dist"]
+}

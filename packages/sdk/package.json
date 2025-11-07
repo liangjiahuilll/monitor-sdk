@@ -1,5 +1,11 @@
 {
-  "name": "@monitor/sdk",
+  "name": "sdk",
   "version": "1.0.0",
-  "main": "dist/index.js"
+  "description": "前端监控 SDK 结构示例。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
