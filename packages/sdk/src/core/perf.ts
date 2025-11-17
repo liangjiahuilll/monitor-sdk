@@ -24,13 +24,10 @@ function trackNavigationTime() {
   });
 }
 
-
-
 //FCP LCP FP
 function trackPaintTime() {
-  // @ts-ignore
   const paintObserver = new PerformanceObserver((entryList) => {
-    entryList.getEntries().forEach((entry: any) => {
+    entryList.getEntries().forEach((entry: unknown) => {
       if (entry.name === 'first-paint') {
         report({
           type: 'performance',
@@ -49,7 +46,7 @@ function trackPaintTime() {
 
   const lcpObserver = new PerformanceObserver((entryList) => {
     const entries = entryList.getEntries();
-    const lcp = entries[entries.length - 1] as any;
+    const lcp = entries[entries.length - 1] as unknown;
 
     report({
       type: 'performance',
@@ -59,8 +56,6 @@ function trackPaintTime() {
   lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
 }
 
-
-
 // 资源加载耗时
 function trackResourceTime() {
   window.addEventListener('load', () => {
@@ -69,9 +64,9 @@ function trackResourceTime() {
     resources.forEach((res) => {
       report({
         type: 'resource',
-        name: res.name,  //资源的完整URL地址
+        name: res.name, //资源的完整URL地址
         initiator: res.initiatorType, // script/css/img/font/xhr
-        duration: res.duration,  //时长
+        duration: res.duration, //时长
         transferSize: res.transferSize, //数据大小（如果是本地缓存或者磁盘缓存都是0，包含header和body）
         encodedBodySize: res.encodedBodySize, //压缩后的body大小
         decodedBodySize: res.decodedBodySize //解压后的body大小
@@ -81,7 +76,7 @@ function trackResourceTime() {
 }
 
 export function track() {
-  trackNavigationTime()
-  trackPaintTime()
-  trackResourceTime()
+  trackNavigationTime();
+  trackPaintTime();
+  trackResourceTime();
 }

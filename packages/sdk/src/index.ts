@@ -1,6 +1,6 @@
 // SDK 入口文件
-import { trackPV } from "./core/behavior";
-import { trackJSException } from "./core/error"
+import { trackPV } from './core/behavior';
+import { trackJSException } from './core/error';
 
 export interface SDKOptions {
   pv?: boolean;
