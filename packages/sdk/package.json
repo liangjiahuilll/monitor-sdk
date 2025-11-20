@@ -1,6 +1,12 @@
 {
   "name": "sdk",
   "version": "1.0.0",
-  "description": "前端监控 SDK 结构示例。",
-  "main": "src/index.ts"
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "tsup": "^8.5.0"
+  }
 }

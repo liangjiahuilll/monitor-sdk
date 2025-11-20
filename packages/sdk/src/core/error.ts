@@ -8,9 +8,9 @@ export function trackJSException() {
     report({
       type: 'js_error',
       message: msg,
-      source,
-      line,
-      col,
+      filename: source,
+      lineno: line,
+      colno: col,
       stack: error?.stack,
       timestamp: getTimeStamp(),
     })

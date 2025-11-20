@@ -80,7 +80,7 @@ function trackResourceTime() {
   });
 }
 
-export function track() {
+export function trackPerf() {
   trackNavigationTime()
   trackPaintTime()
   trackResourceTime()

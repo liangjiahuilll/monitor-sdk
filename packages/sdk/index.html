@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDK Demo</title>
+  </head>
+  <body>
+    <h1>Test SDK</h1>
+
+    <!-- 引入你打包出来的 SDK -->
+    <script src="./dist/index.global.js"></script>
+
+    <script>
+      const sdk1 = new window.sdk.MySDK({
+        pv: true,
+        jsError: true
+      });
+
+      sdk1.init();
+    </script>
+  </body>
+</html>
