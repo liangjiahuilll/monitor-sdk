@@ -1,31 +1,30 @@
-import { createBrowserRouter } from "react-router-dom";
-import Dashboard from "../pages/dashboard";
-import Login from "../pages/login";
-import AppLayout from "../components/layout";
+import { createBrowserRouter } from 'react-router-dom';
+import Dashboard from '../pages/dashboard';
+import AppLayout from '../components/layout';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Dashboard/>
+    element: <Dashboard />
   },
   {
-    path: "/",
-    element: <AppLayout />,     // 布局组件！
+    path: '/',
+    element: <AppLayout />,
     children: [
       {
-        index: true,            // 默认 / = Dashboard
-        element: <Dashboard />,
+        index: true,
+        element: <Dashboard />
       },
       {
-        path: "user",
-        element: <div>用户管理页面</div>,
+        path: 'user',
+        element: <div>用户管理页面</div>
       },
       {
-        path: "settings",
-        element: <div>设置页面</div>,
-      },
-    ],
-  },
-])
+        path: 'settings',
+        element: <div>设置页面</div>
+      }
+    ]
+  }
+]);
 
-export default router
+export default router;
