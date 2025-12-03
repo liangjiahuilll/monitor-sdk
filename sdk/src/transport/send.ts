@@ -6,7 +6,6 @@ export function report(data: unknown) {
     console.log('使用 sendBeacon 上报数据:', data);
   } else {
     // fetch('http//xxxx', {
-      
     // })
   }
 }

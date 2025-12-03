@@ -1,25 +1,18 @@
-import db from "../services/db.js";
+import db from '../services/db.js';
 
 export async function handleReport(req, res) {
   const { type, data, uuid, timestamp } = req.body;
 
   try {
-    if (type === "pv") {
+    if (type === 'pv') {
       await db.execute(
         `INSERT INTO t_pv(page, referrer, uuid, timestamp, ip, ua)
          VALUES (?, ?, ?, ?, ?, ?)`,
-        [
-          data.page,
-          data.referrer,
-          uuid,
-          timestamp,
-          req.ip,
-          req.headers["user-agent"] || "",
-        ]
+        [data.page, data.referrer, uuid, timestamp, req.ip, req.headers['user-agent'] || '']
       );
     }
 
-    if (type === "performance") {
+    if (type === 'performance') {
       await db.execute(
         `INSERT INTO t_performance(fp, fcp, lcp, cls, tti, uuid, timestamp)
          VALUES (?, ?, ?, ?, ?, ?, ?)`,
@@ -27,7 +20,7 @@ export async function handleReport(req, res) {
       );
     }
 
-    if (type === "js_error" || type === "promise_error") {
+    if (type === 'js_error' || type === 'promise_error') {
       await db.execute(
         `INSERT INTO t_error(message, stack, filename, lineno, colno, uuid, timestamp)
          VALUES (?, ?, ?, ?, ?, ?, ?)`,
@@ -38,12 +31,12 @@ export async function handleReport(req, res) {
           data.lineno ?? null,
           data.colno ?? null,
           uuid,
-          timestamp,
+          timestamp
         ]
       );
     }
 
-    if (type === "event") {
+    if (type === 'event') {
       await db.execute(
         `INSERT INTO t_event(event_name, payload, uuid, timestamp)
          VALUES (?, ?, ?, ?)`,
@@ -53,7 +46,7 @@ export async function handleReport(req, res) {
 
     res.json({ success: true });
   } catch (err) {
-    console.error("上报失败：", err);
+    console.error('上报失败：', err);
     res.status(500).json({ success: false });
   }
 }

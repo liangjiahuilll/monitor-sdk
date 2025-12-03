@@ -1,7 +1,7 @@
 // SDK 入口文件
 import { trackPV } from './core/behavior';
 import { trackJSException } from './core/error';
-import { trackPerf } from './core/perf'
+import { trackPerf } from './core/perf';
 
 export interface SDKOptions {
   pv?: boolean;
@@ -12,16 +12,14 @@ export class MySDK {
   constructor(private options: SDKOptions = {}) {}
 
   init() {
-      trackPV();
+    trackPV();
 
-      trackJSException();
+    trackJSException();
 
-      trackPerf()
+    trackPerf();
   }
 }
 
-// @ts-ignore
-if (typeof window !== "undefined") {
-  // @ts-ignore
+if (typeof window !== 'undefined') {
   window.sdk = { MySDK };
 }
