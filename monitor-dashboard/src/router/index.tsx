@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Dashboard from '../pages/dashboard';
+import Performance from '../pages/performance';
 import AppLayout from '../components/layout';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Dashboard />
+    element: <Performance />
   },
   {
     path: '/',
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />
+        element: <Performance />
       },
       {
         path: 'user',
