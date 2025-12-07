@@ -1,6 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Performance from '../pages/performance';
 import AppLayout from '../components/layout';
+import ErrorPage from '../pages/errorPage';
+import EventPage from '../pages/eventPage';
 
 const router = createBrowserRouter([
   {
@@ -16,12 +18,12 @@ const router = createBrowserRouter([
         element: <Performance />
       },
       {
-        path: 'user',
-        element: <div>用户管理页面</div>
+        path: 'errors',
+        element: <ErrorPage />
       },
       {
-        path: 'settings',
-        element: <div>设置页面</div>
+        path: 'events',
+        element: <EventPage />
       }
     ]
   }

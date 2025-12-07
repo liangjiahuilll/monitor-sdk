@@ -23,13 +23,13 @@ const AppLayout = () => {
               icon: <DashboardOutlined />
             },
             {
-              key: '/user',
-              label: <Link to="/user">事件埋点</Link>,
+              key: '/events',
+              label: <Link to="/events">事件埋点</Link>,
               icon: <ThunderboltOutlined />
             },
             {
-              key: '/settings',
-              label: <Link to="/settings">错误埋点</Link>,
+              key: '/errors',
+              label: <Link to="/errors">错误埋点</Link>,
               icon: <WarningOutlined />
             }
           ]}
@@ -38,7 +38,7 @@ const AppLayout = () => {
 
       <Layout>
         <Header>前端埋点监控平台</Header>
-        <Content style={{ margin: 20, padding: 20 }}>
+        <Content>
           <Outlet />
         </Content>
       </Layout>
